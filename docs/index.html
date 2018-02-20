@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>GMDE-Presentation</title>
+<link rel="stylesheet" href="css/nprogress.css">
+<link rel="stylesheet" href="css/style.css">
+<textarea id="source"></textarea>
+<script src="js/remark.min.js"></script>
+<script src="js/nprogress.min.js"></script>
+<script>
+	// https://github.com/gnab/remark/wiki/Markdown#slide-properties
+	const slideshow = remark.create({
+		sourceUrl: "slides.md",
+		ratio: "16:9",
+		countIncrementalSlides: false,
+		highlightStyle: "github",
+		highlightLines: true,
+	});
+	NProgress.configure({
+		showSpinner: false,
+		trickle: false,
+		speed: 500,
+	});
+	slideshow.on('showSlide', slide => {
+		const slideCount = slideshow.getSlideCount();
+		const currentSlide = slide.getSlideIndex() + 1;
+		let progress = currentSlide / slideCount;
+		progress = progress >= 1.0 ? 0.9999 : progress;
+		NProgress.set(progress);
+	});
+</script>

@@ -1,0 +1,190 @@
+/*
+	Colors based on GitHub's color palette
+	Some CSS taken from: http://www.jmlilly.net/liminal/talks/template.html
+*/
+
+:root {
+	/* 'Yanone Kaffeesatz' */
+	--font-family-header: Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', sans-serif;
+	/* 'Droid Serif' */
+	--font-family-normal: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+	--color-dark: #24292e;
+	--color-dark-2: #586069;
+
+	--color-light: #fff;
+	--color-light-2: rgba(255, 255, 255, 0.6);
+
+	--background-color-code: #e7e8e2;
+
+	--color-red: #d31717;
+	--color-green: #28a745;
+	--color-blue: #0366d6;
+	--color-purple: #6f42c1;
+
+	--background-color-body: #000; /* #fff; */
+	--background-color-body-inverse: #2b3137;
+	--background-color-body-inverse-bold: var(--color-dark);
+
+	--color-footer: var(--color-dark-2);
+	--color-footer-inverse: var(--color-light-2);
+
+	--color-heading: var(--color-light);
+	--color-heading-inverse: var(--color-light);
+	--color-heading-light: var(--color-dark-2);
+	--weight-heading: 300;
+	--font-family-heading: var(--font-family-header);
+
+	--color-body: var(--color-dark);
+	--color-body-inverse: var(--color-light-2);
+	--weight-body: 300;
+	--font-family-body: var(--font-family-normal);
+
+	--color-link: var(--color-blue);
+	--strong-weight: 500;
+
+	--slide-fade-duration: 0.2s;
+
+	--color-em: var(--color-blue);
+}
+
+
+body {
+	background-color: var(--background-color-body);
+	font-family: var(--font-family-body);
+	color: var(--color-body);
+	font-weight: var(--weight-body);
+}
+
+h1, h2, h3 {
+	font-family: var(--font-family-heading);
+	color: var(--color-heading);
+	font-weight: var(--weight-heading);
+	margin-bottom: 0;
+}
+
+/* .remark-slide-content p { font-size: 32px; } */
+.remark-slide-content li { font-size: 30px; }
+.remark-slide-content h1 { font-size: 52px; }
+.remark-slide-content h2 { font-size: 2.6em; }
+.remark-slide-content h3 { font-size: 2em; }
+
+
+.footnote {
+	position: absolute;
+	bottom: 3em;
+}
+li p { line-height: 1.25em; }
+
+.red { color: var(--color-red); }
+.green { color: var(--color-green); }
+.blue { color: var(--color-blue); }
+.purple { color: var(--color-purple); }
+
+.large { font-size: 3em; }
+a, a > code {
+	color: var(--color-link);
+	text-decoration: none;
+}
+code, pre {
+	background: var(--background-color-code);
+	border-radius: 5px;
+}
+strong { font-weight: var(--strong-weight); }
+.inverse strong { color: var(--color-light); }
+em {
+	color: var(--color-em);
+	font-style: normal;
+}
+
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+/* .remark-code-line-highlighted { background-color: #373832; } */
+
+pre .remark-code {
+	font-size: 1em;
+}
+
+.pull-left {
+	float: left;
+	width: 47%;
+}
+.pull-right {
+	float: right;
+	width: 47%;
+}
+.pull-right ~ p {
+	clear: both;
+}
+
+.inverse {
+	background-color: var(--background-color-body-inverse);
+	color: var(--color-body-inverse);
+}
+.inverse h1, .inverse h2 {
+	color: var(--color-heading-inverse);
+	line-height: 0.8em;
+}
+
+/* Two-column layout */
+.left-column {
+	color: var(--color-heading-light);
+	width: 20%;
+	height: 92%;
+	float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+	color: var(--color-heading);
+}
+.right-column {
+	width: 75%;
+	float: right;
+	padding-top: 1em;
+}
+
+.remark-fading { z-index: 9; }
+.remark-slide-container {
+	transition: opacity var(--slide-fade-duration) ease-out;
+	opacity: 0;
+}
+.remark-visible {
+	transition: opacity var(--slide-fade-duration) ease-out;
+	opacity: 1;
+}
+.remark-slide-scaler { box-shadow: none !important; }
+
+.remark-container {
+	/*
+	background: url('https://assets-cdn.github.com/images/modules/site/heroes/simple-codelines.svg'), #2b3137;
+	background-position-x: 0%, 0%;
+	background-position-y: 0%, 0%;
+	background-size: auto auto, auto auto;
+	background-position: center 10%;
+	background-size: cover;
+	*/
+	background-color: var(--background-color-body-inverse);
+}
+
+.footer {
+	position: absolute;
+	bottom: 12px;
+	left: 20px;
+	color: var(--color-footer);
+}
+.inverse .footer {
+	color: var(--color-footer-inverse);
+}
+
+.remark-inline-code {
+	padding: 0.05em 0.2em;
+}
+
+#nprogress .bar { height: 4px; }
+
+.remark-slide-content h1:first-of-type,
+.remark-slide-content h2:first-of-type {
+	display: block;
+	background-color: var(--background-color-body-inverse);
+	color: var(--color-light);
+	margin: -1em -4em 0.2em -4em;
+	padding: 0.5em 4em 0.2em 4em;
+}

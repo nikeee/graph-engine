@@ -1,0 +1,38 @@
+apply plugin: 'java-library'
+
+repositories {
+	jcenter()
+}
+
+sourceSets.main.java.srcDirs = ['src/generated/java', 'src/main/java']
+
+dependencies {
+	// Test framework
+	// EPL-1.0
+	testImplementation 'junit:junit:4.12'
+
+	// Logging framework for tests
+	// MIT
+	testImplementation 'org.slf4j:slf4j-simple:1.7.25'
+
+	// Used by the GraphDumper
+	// Apache-2.0
+	implementation 'guru.nidi:graphviz-java:0.2.2'
+
+	// Used for JSON-serialization
+	// Apache-2.0
+	implementation 'com.google.code.gson:gson:2.8.2'
+
+	// Used for casing conversion and collection factory methods
+	// Apache-2.0
+	implementation 'com.google.guava:guava:24.0-jre'
+
+	// Contains the GraphAdapterBuilder class
+	// Apache-2.0
+	implementation 'org.danilopianini:gson-extras:0.2.1'
+
+	// Used for class model generation
+	// MIT
+	implementation 'org.sdmlib:SDMLib:2.2.1092'
+	implementation 'de.uniks:NetworkParser:4.6.1013'
+}
